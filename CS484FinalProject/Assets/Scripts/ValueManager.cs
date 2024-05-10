@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ValueManager : MonoBehaviour
 {
+    [HideInInspector] public float maxEnergy = 100;
+    [HideInInspector] public float maxSanity = 100;
+    [HideInInspector] public float maxHunger = 100;
     [HideInInspector] public float energy = 100;
     [HideInInspector] public float sanity = 100;
     [HideInInspector] public float hunger = 100;
@@ -20,8 +23,11 @@ public class ValueManager : MonoBehaviour
     [HideInInspector] public bool increaseProgress = false; // Change this when pressing keyboard
     [HideInInspector] public bool gameOver = false;
 
+    public BarManager barController;
+
     private void Start()
     {
+        barController.setMax(maxEnergy, maxHunger, maxSanity);
         timer = startingTime;
     }
 
@@ -46,6 +52,8 @@ public class ValueManager : MonoBehaviour
         {
             EndGame(false);
         }
+
+        barController.updateBar(energy, hunger, sanity);
     }
 
     public void EndGame(bool won)
