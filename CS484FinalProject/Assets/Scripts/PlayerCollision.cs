@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public ValueManager valueManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,17 @@ public class PlayerCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Interactable")
+        if(other.gameObject.tag == "EnergyDrink")
         {
-            print("hit");
+            valueManager.DrinkEnergy();
+        }
+        if(other.gameObject.tag == "Food")
+        {
+            valueManager.EatFood();
+        }
+        if(other.gameObject.tag == "Water")
+        {
+            valueManager.DrinkWater();
         }
     }
    
