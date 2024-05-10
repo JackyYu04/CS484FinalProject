@@ -13,6 +13,8 @@ public class SetOptionFromUI : MonoBehaviour
 
     private void Start()
     {
+        turnDropdown.SetValueWithoutNotify(PlayerPrefs.GetInt("turn"));
+        SetTurnPlayerPref(0);
         volumeSlider.onValueChanged.AddListener(SetGlobalVolume);
         turnDropdown.onValueChanged.AddListener(SetTurnPlayerPref);
 
