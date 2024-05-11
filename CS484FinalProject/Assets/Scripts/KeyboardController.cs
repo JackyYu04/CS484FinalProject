@@ -18,16 +18,18 @@ public class KeyboardController : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision  other){
+    void OnTriggerEnter(Collider  other){
         if(other.gameObject.tag == "GameController"){
             valueManager.increaseProgress = true;
+            print("collission enter");
         }
     }
 
-    void OnCollisionExit(Collision  other){
+    void OnTriggerExit(Collider  other){
         if(other.gameObject.tag == "GameController"){
             valueManager.increaseProgress = false;
+            print("collission exit");
         }
-        
     }
+
 }
