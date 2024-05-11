@@ -21,14 +21,12 @@ public class KeyboardController : MonoBehaviour
     void OnTriggerEnter(Collider  other){
         if(other.gameObject.tag == "GameController"){
             valueManager.increaseProgress = true;
-            print("collission enter");
         }
     }
 
     void OnTriggerExit(Collider  other){
         if(other.gameObject.tag == "GameController"){
             valueManager.increaseProgress = false;
-            print("collission exit");
         }
     }
 

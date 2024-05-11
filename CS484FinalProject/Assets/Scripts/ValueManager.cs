@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ValueManager : MonoBehaviour
 {
+    public SceneTransitionManager sceneManager;
     [HideInInspector] public float maxEnergy = 100;
     [HideInInspector] public float maxSanity = 100;
     [HideInInspector] public float maxHunger = 100;
@@ -61,6 +62,7 @@ public class ValueManager : MonoBehaviour
         gameOver = true;
         increaseProgress = false;
         pause = true;
+        sceneManager.GoToScene(2);
     }
 
     public void ResetGame()

@@ -22,14 +22,17 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.gameObject.tag == "EnergyDrink")
         {
+            print("energy");
             valueManager.DrinkEnergy();
         }
         if(other.gameObject.tag == "Food")
         {
+            print("food");
             valueManager.EatFood();
         }
         if(other.gameObject.tag == "Water")
         {
+            print("water");
             valueManager.DrinkWater();
         }
     }
