@@ -13,7 +13,7 @@ public class ValueManager : MonoBehaviour
     [HideInInspector] public float progress = 0;
     [HideInInspector] public float timer;
 
-    [SerializeField] private float startingTime = 300;
+    [SerializeField] public float startingTime = 300;
     [SerializeField] private float energyDecay = 1;
     [SerializeField] private float sanityDecay = 1.5f;
     [SerializeField] private float hungerDecay = 3;
